@@ -11,6 +11,6 @@ class TestSignInPage:
     def test_signin(self, browser, user_test):
         browser.go_to_site(SignIn.path)
         browser.driver.implicitly_wait(5)
-        page = signin(User=user_test)
+        page = SignIn(User=user_test)
         print(page.email.get_text())
         time.sleep(2)
