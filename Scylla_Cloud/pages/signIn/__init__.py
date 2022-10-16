@@ -9,17 +9,9 @@ class SignIn():
             self.password = InputElement(driver=browser.get_driver(), locator=locators.password_locator)
             self.signin_button = ButtonElement(driver=browser.get_driver(), locator=locators.signin_button_locator)
 
-        def click_on_email_field(self):
-            email_field = self.driver.find_element(locators.email_locator[0], locators.email_locator[1])
-            email_field.click()
-            return email_field
 
-        def click_on_password_field(self):
-            password_field = self.driver.find_element(locators.password_locator[0], locators.password_locator[1])
-            password_field.click()
-            return password_field
+        def signin(self, user: User):
+            self.email.enter_text(user.email)
+            self.password.enter_text(user.password)
 
-        def click_on_signin_button(self):
-            signin_button = self.driver.find_element(locators.signin_button_locator[0], locators.signin_button_locator[1])
-            signin_button.click()
-            return signin_button
+
